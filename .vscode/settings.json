@@ -1,0 +1,8 @@
+{
+  // The site uses a `{{ ... }}` template syntax inside inline style="" attributes,
+  // resolved at runtime by the DC component runtime (support.js). VS Code's built-in
+  // CSS validator doesn't understand this and reports them as CSS syntax errors.
+  // Disabling embedded-style validation clears those false positives.
+  "html.validate.styles": false,
+  "css.validate": false
+}

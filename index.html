@@ -23,6 +23,14 @@
     a{color:var(--amber-text);text-decoration:none}
     a:hover{color:var(--ink)}
     html{scroll-behavior:smooth}
+    /* Smooth page entrance: the whole app gently fades + rises in on first render
+       instead of popping in once the runtime finishes loading. Runs once on mount. */
+    @keyframes ie-page-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    #dc-root>.sc-host{animation:ie-page-in .7s cubic-bezier(.22,.61,.36,1) both}
+    /* Design-system components (logo, buttons, images) fade in as they resolve,
+       rather than snapping into place a beat after the rest of the page. */
+    @keyframes ie-soft-in{from{opacity:0}to{opacity:1}}
+    .sc-host-x{animation:ie-soft-in .5s ease both}
     summary{list-style:none}
     summary::-webkit-details-marker{display:none}
     details[open] .faq-sign{transform:rotate(45deg)}
@@ -52,7 +60,6 @@
     .ie-proc-pin > div:nth-of-type(3){top:25%}
     .ie-proc-pin > div:nth-of-type(4){top:50%}
     .ie-proc-pin > div:nth-of-type(5){top:75%}
-    @media (prefers-reduced-motion: reduce){.ie-pin-card{transition:none}}
     .ie-proc-track::-webkit-scrollbar{display:none}
     @media (min-width:861px){.ie-nav-mobile{display:none!important}}
     @media (max-width:640px){
@@ -69,7 +76,6 @@
     @keyframes ie-drop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
     details[open] .faq-a{animation:ie-drop .32s ease}
     .ie-marquee-track{display:flex;width:max-content;align-items:baseline;gap:56px;animation:ie-marquee 34s linear infinite}
-    @media (prefers-reduced-motion: reduce){.ie-anim{animation:none!important}details[open] .faq-a{animation:none}.ie-nav-mobile{transition:none}}
   </style>
 </helmet>
 
@@ -529,7 +535,7 @@ class Component extends DCLogic {
   }
   _setupMotion(){
     if(typeof document==='undefined') return;
-    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduce = false; // reduced-motion guard disabled — animations always play
     const draws = Array.from(document.querySelectorAll('[data-draw]'));
     draws.forEach((el)=>{ try{ const len=el.getTotalLength(); el.style.strokeDasharray=len; el.style.strokeDashoffset=reduce?0:len; el.style.transition='stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1)'; el.style.transitionDelay=(Number(el.getAttribute('data-draw'))*120)+'ms'; }catch(e){} });
     const reveals = Array.from(document.querySelectorAll('[data-reveal]'));
