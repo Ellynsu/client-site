@@ -1,0 +1,39 @@
+:root{
+--font-display:"Instrument Serif",Georgia,serif;
+--font-ui:"Archivo","Helvetica Neue",Arial,sans-serif;
+--font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+
+/* Scale, from the guide's type specimen */
+--size-display:80px;      /* 72-88 range */
+--size-display-min:72px;
+--size-display-max:88px;
+--size-h2:42px;
+--size-h3:22px;
+--size-body:16px;
+--size-small:14px;
+--size-label:11px;
+--size-label-lg:12px;
+
+--leading-display:1.02;
+--leading-h2:1.1;
+--leading-h3:1.3;
+--leading-body:1.65;
+--leading-small:1.55;
+
+--tracking-display:-0.02em;
+--tracking-h2:-0.01em;
+--tracking-body:0;
+--tracking-label:0.14em;
+
+/* Semantic */
+--text-display:var(--weight-regular) var(--size-display)/var(--leading-display) var(--font-display);
+--text-h2:var(--weight-regular) var(--size-h2)/var(--leading-h2) var(--font-display);
+--text-h3:var(--weight-semibold) var(--size-h3)/var(--leading-h3) var(--font-ui);
+--text-copy:var(--weight-regular) var(--size-body)/var(--leading-body) var(--font-ui);
+--text-copy-small:var(--weight-regular) var(--size-small)/var(--leading-small) var(--font-ui);
+--text-mono-label:var(--weight-400,400) var(--size-label)/1.4 var(--font-mono);
+}

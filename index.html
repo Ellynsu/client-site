@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/indivisual-eyes-design-system-896a08f2-3b13-407d-9837-74ee0729c97d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/indivisual-eyes-design-system-896a08f2-3b13-407d-9837-74ee0729c97d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/indivisual-eyes-design-system-896a08f2-3b13-407d-9837-74ee0729c97d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/indivisual-eyes-design-system-896a08f2-3b13-407d-9837-74ee0729c97d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/indivisual-eyes-design-system-896a08f2-3b13-407d-9837-74ee0729c97d/tokens/layout.css">
+  <link rel="stylesheet" href="_ds/indivisual-eyes-design-system-896a08f2-3b13-407d-9837-74ee0729c97d/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/indivisual-eyes-design-system-896a08f2-3b13-407d-9837-74ee0729c97d/styles.css">
+  <script src="_ds/indivisual-eyes-design-system-896a08f2-3b13-407d-9837-74ee0729c97d/_ds_bundle.js"></script>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--warm-white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:clip}
+    html{overflow-x:clip}
+    a{color:var(--amber-text);text-decoration:none}
+    a:hover{color:var(--ink)}
+    html{scroll-behavior:smooth}
+    summary{list-style:none}
+    summary::-webkit-details-marker{display:none}
+    details[open] .faq-sign{transform:rotate(45deg)}
+    .ie-nav-toggle{display:none}
+    .ie-nav-mobile{overflow:hidden;transition:max-height .34s ease,opacity .24s ease}
+    header > div:nth-child(2) img{width:150px!important;height:auto!important}
+    @media (max-width:860px){.ie-nav-desktop{display:none!important}.ie-nav-toggle{display:inline-flex!important}
+      header > div:nth-child(1){padding:8px 20px!important;font-size:10px}
+      header > div:nth-child(2){padding:12px 20px!important;gap:12px!important}
+      header > div:nth-child(2) img{width:118px!important}
+      .ie-nav-mobile{padding:0 20px!important}
+      .ie-nav-mobile a{padding:16px 0!important;font-size:17px!important}
+      .ie-utilbar{justify-content:center!important}
+      .ie-util-phone{display:none!important}
+    }
+    @media (max-width:640px){
+      .ie-proc-desktop{display:none!important}
+      .ie-proc-swipe{display:block!important}
+    }
+    .ie-proc-swipe{display:none}
+    @media (max-width:760px){.ie-ps{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr) auto;top:76px!important;height:calc(100svh - 96px)!important;min-height:min(420px, calc(100svh - 88px))!important;max-height:none!important}.ie-ps-text{border-left:0!important;border-top:1px solid var(--line);padding:20px 20px 24px!important;gap:16px!important}.ie-ps-no{font-size:40px!important}.ie-ps-name{font-size:24px!important;margin-top:8px!important}}
+    .ie-proc-pin{position:relative;height:400vh}
+    .ie-proc-stage{position:sticky;top:80px;height:calc(100vh - 100px);max-height:640px;border:1px solid var(--line);background:var(--paper);overflow:hidden}
+    .ie-pin-card{position:absolute;inset:0;display:flex;flex-direction:column;transition:opacity .45s ease,transform .45s ease;will-change:opacity,transform}
+    .ie-pin-seg{position:absolute;left:0;width:1px;height:25%}
+    .ie-proc-pin > div:nth-of-type(2){top:0}
+    .ie-proc-pin > div:nth-of-type(3){top:25%}
+    .ie-proc-pin > div:nth-of-type(4){top:50%}
+    .ie-proc-pin > div:nth-of-type(5){top:75%}
+    @media (prefers-reduced-motion: reduce){.ie-pin-card{transition:none}}
+    .ie-proc-track::-webkit-scrollbar{display:none}
+    @media (min-width:861px){.ie-nav-mobile{display:none!important}}
+    @media (max-width:640px){
+      main > section{padding-top:56px!important;padding-bottom:56px!important}
+      main > section > div{padding-left:20px!important;padding-right:20px!important}
+      main > section:first-child > div{padding-top:40px!important}
+      #brands{padding-bottom:0!important}
+    }
+    @keyframes ie-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes ie-spin{to{transform:rotate(360deg)}}
+    @keyframes ie-bob1{0%,100%{transform:translateY(0)}50%{transform:translateY(72px)}}
+    @keyframes ie-bob2{0%,100%{transform:translateY(0)}50%{transform:translateY(98px)}}
+    @keyframes ie-bob3{0%,100%{transform:translateY(0)}50%{transform:translateY(118px)}}
+    @keyframes ie-drop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+    details[open] .faq-a{animation:ie-drop .32s ease}
+    .ie-marquee-track{display:flex;width:max-content;align-items:baseline;gap:56px;animation:ie-marquee 34s linear infinite}
+    @media (prefers-reduced-motion: reduce){.ie-anim{animation:none!important}details[open] .faq-a{animation:none}.ie-nav-mobile{transition:none}}
+  </style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:60;width:100%">
+  <div class="ie-utilbar" style="background:var(--ink);color:var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:9px 32px;font:400 11px/1.4 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase">
+    <span class="ie-util-addr">1200 K St, Suite 5 · Sacramento, CA</span>
+    <span class="ie-util-phone">(916) 444-3012</span>
+  </div>
+  <div style="background:var(--warm-white);display:flex;align-items:center;gap:24px;padding:16px 32px;border-bottom:1px solid var(--line)">
+    <a href="#" onClick="{{ goTop }}" aria-label="IndiVisual Eyes — home" style="display:inline-flex;line-height:0">
+      <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Logo" src="{{ logo }}" width="{{ logoWidth }}" hint-size="150px,40px"></x-import>
+    </a>
+    <nav class="ie-nav-desktop" style="display:flex;gap:32px;margin-left:auto;align-items:center">
+      <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="6">
+        <a href="#" data-nav="{{ it }}" onClick="{{ onNavClick }}" style="font:500 16px/1 var(--font-ui);color:var(--ink);text-decoration:none;padding-bottom:6px;border-bottom:2px solid transparent" style-hover="color:var(--amber-text)">{{ it }}</a>
+      </sc-for>
+    </nav>
+    <div class="ie-nav-desktop" style="display:flex">
+      <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Button" on-click="{{ goVisit }}" hint-size="auto,44px">Book appointment</x-import>
+    </div>
+    <button class="ie-nav-toggle" onClick="{{ toggleMenu }}" aria-label="Open menu" style="margin-left:auto;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0 6px">
+      <span style="height:2px;width:100%;background:var(--ink);display:block"></span>
+      <span style="height:2px;width:100%;background:var(--ink);display:block"></span>
+      <span style="height:2px;width:100%;background:var(--ink);display:block"></span>
+    </button>
+  </div>
+  <div class="ie-nav-mobile" style="{{ menuStyle }}">
+    <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="6">
+      <a href="#" data-nav="{{ it }}" onClick="{{ onNavClick }}" style="display:block;padding:15px 0;border-bottom:1px solid var(--line);font:500 18px/1 var(--font-ui);color:var(--ink);text-decoration:none">{{ it }}</a>
+    </sc-for>
+    <div style="padding-top:18px;padding-bottom:calc(32px + env(safe-area-inset-bottom, 0px));flex:0 0 auto">
+      <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Button" on-click="{{ goVisitMobile }}" style="width:100%;justify-content:center" hint-size="100%,48px">Appointments</x-import>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section style="background:var(--warm-white)">
+    <div style="max-width:1140px;margin:0 auto;padding:88px 32px 0">
+      <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Eyebrow" hint-size="auto,16px">To See · and Be Seen</x-import>
+      <h1 style="font:400 clamp(42px,9vw,82px)/1.03 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:22px 0 0;max-width:16ch">Frames, fitted <em style="font-style:italic">by hand.</em></h1>
+      <p style="font:400 18px/1.7 var(--font-ui);color:var(--slate);max-width:520px;margin:26px 0 0">An independent, owner-operated eyewear boutique with an on-site lab. Frames chosen with you, lenses cut here, everything fit by hand. Come in and try them on.</p>
+      <div style="display:flex;gap:16px;margin:34px 0 0;flex-wrap:wrap;align-items:center">
+        <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Button" on-click="{{ goVisit }}" hint-size="auto,48px">Book an appointment</x-import>
+        <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Button" variant="tertiary" href="tel:9164443012" hint-size="auto,32px">Call (916) 444-3012</x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE: TWO IMAGES + MISSION (connector motif) -->
+  <section id="about" style="background:var(--warm-white);padding:72px 0 96px">
+    <div style="max-width:1140px;margin:0 auto;padding:0 32px">
+      <!-- image row -->
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:stretch">
+        <div style="position:relative;flex:1 1 300px;min-width:0;min-height:340px;background:var(--sand);border:1px solid var(--line);overflow:hidden">
+          <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%">
+            <g fill="none" stroke="var(--slate)" stroke-width="1.5">
+              <circle class="ie-anim" cx="46" cy="200" r="66" style="transform-box:fill-box;transform-origin:center;animation:ie-spin 55s linear infinite"></circle>
+              <circle class="ie-anim" cx="46" cy="200" r="116" style="transform-box:fill-box;transform-origin:center;animation:ie-spin 72s linear infinite reverse"></circle>
+              <circle class="ie-anim" cx="46" cy="200" r="166" style="transform-box:fill-box;transform-origin:center;animation:ie-spin 88s linear infinite"></circle>
+              <circle class="ie-anim" cx="46" cy="200" r="266" style="transform-box:fill-box;transform-origin:center;animation:ie-spin 110s linear infinite reverse"></circle>
+              <circle class="ie-anim" cx="46" cy="200" r="316" style="transform-box:fill-box;transform-origin:center;animation:ie-spin 132s linear infinite"></circle>
+            </g>
+            <circle class="ie-anim" cx="46" cy="200" r="216" fill="none" stroke="var(--amber)" stroke-width="2.5" stroke-dasharray="64 28" style="transform-box:fill-box;transform-origin:center;animation:ie-spin 42s linear infinite"></circle>
+          </svg>
+        </div>
+        <div style="flex:2 1 460px;min-width:0;display:flex">
+          <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="SHOP INTERIOR — CUSTOMER TRYING FRAMES, 16:9" ratio="16/9" style="{{ wideImgStyle }}" hint-size="100%,340px"></x-import>
+        </div>
+      </div>
+      <!-- mission row -->
+      <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-end;margin-top:56px">
+        <div style="flex:1.3 1 380px;min-width:0">
+          <span style="display:inline-block;background:var(--sand);border:1px solid var(--line);color:var(--mute);font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;padding:9px 13px;border-radius:2px">Our shop</span>
+          <h2 style="font:400 clamp(30px,5.2vw,46px)/1.07 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:20px 0 0;max-width:16ch">A boutique optician, not a chain counter.</h2>
+          <p style="font:400 17px/1.7 var(--font-ui);color:var(--slate);margin:22px 0 0;max-width:500px">We've served Sacramento for years with designer frames and custom eyewear. Style first, then the prescription that makes it work — chosen with you, cut in our lab, and fit by hand.</p>
+          <div style="margin-top:26px"><x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Button" variant="tertiary" on-click="{{ goStory }}" hint-size="auto,32px">Read our story</x-import></div>
+        </div>
+        <div style="flex:1 1 300px;min-width:0;align-self:stretch;min-height:220px;display:flex">
+          <svg viewBox="0 0 460 240" preserveAspectRatio="xMidYMax meet" style="width:100%;height:100%">
+            <g fill="none" stroke="var(--line)" stroke-width="1.5">
+              <path d="M452 6 V64 Q452 84 432 84 H70 Q50 84 50 104 V236"></path>
+              <path d="M410 6 V104 Q410 124 390 124 H120 Q100 124 100 144 V236"></path>
+              <path d="M368 6 V144 Q368 164 348 164 H170 Q150 164 150 184 V236"></path>
+            </g>
+            <g fill="var(--mute)">
+              <circle class="ie-anim" cx="452" cy="6" r="3.5" style="transform-box:fill-box;transform-origin:center;animation:ie-bob1 4.6s ease-in-out infinite"></circle><circle class="ie-anim" cx="410" cy="6" r="3.5" style="transform-box:fill-box;transform-origin:center;animation:ie-bob2 5.2s ease-in-out .9s infinite"></circle><circle class="ie-anim" cx="368" cy="6" r="3.5" style="transform-box:fill-box;transform-origin:center;animation:ie-bob3 5.8s ease-in-out 1.8s infinite"></circle>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS ROW -->
+  <sc-if value="{{ showBrands }}" hint-placeholder-val="{{ true }}">
+  <section id="brands" style="background:var(--warm-white);padding:88px 0 0">
+    <div style="max-width:1140px;margin:0 auto;padding:0 32px">
+      <p style="font:400 11px/1.4 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);margin:0 0 40px;text-align:center">The wall we've chosen to carry</p>
+      <div class="ie-marquee" style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)">
+        <div class="ie-marquee-track" aria-hidden="false">
+          <sc-for list="{{ brandsLoop }}" as="b" hint-placeholder-count="20">
+            <div style="flex:0 0 auto;width:172px;height:72px;display:flex;align-items:center;justify-content:center">
+              <sc-if value="{{ b.hasLogo }}" hint-placeholder-val="{{ false }}">
+                <div role="img" aria-label="{{ b.name }}" style="width:172px;height:72px;background-position:center;background-size:contain;background-repeat:no-repeat;filter:grayscale(1) brightness(0.2);background-image:{{ b.bg }}"></div>
+              </sc-if>
+              <sc-if value="{{ b.noLogo }}" hint-placeholder-val="{{ true }}">
+                <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="{{ b.label }}" style="{{ logoImgStyle }}" hint-size="172px,72px"></x-import>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- SERVICES -->
+  <sc-if value="{{ showServices }}" hint-placeholder-val="{{ true }}">
+  <section id="services" style="background:var(--warm-white);padding:100px 0">
+    <div style="max-width:1140px;margin:0 auto;padding:0 32px">
+      <div style="max-width:640px;margin:0 0 44px">
+        <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Eyebrow" hint-size="auto,16px">What we do · services</x-import>
+        <h2 style="font:400 clamp(30px,5.2vw,46px)/1.07 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:12px 0 0">Everything happens at the bench.</h2>
+      </div>
+
+      <!-- FEATURE: on-site lab (the differentiator) -->
+      <div style="display:flex;flex-wrap:wrap;border:1px solid var(--line);background:var(--ink)">
+        <div style="flex:1.15 1 400px;min-width:0;padding:52px 48px;display:flex;flex-direction:column;align-items:flex-start">
+          <p style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin:0">The on-site lab · what sets us apart</p>
+          <h3 style="font:400 clamp(28px,4.6vw,42px)/1.08 var(--font-display);letter-spacing:-0.02em;color:var(--warm-white);margin:20px 0 0;max-width:14ch">Lenses cut, edged and mounted here.</h3>
+          <p style="font:400 17px/1.7 var(--font-ui);color:var(--line);margin:20px 0 0;max-width:440px">One of the few shops in the Sacramento area that finishes lenses on site — including rimless while you wait. High-index, progressive, blue-light, unusual shapes and custom tints all happen at our bench, often the same day.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 32px">
+            <span style="font:400 11px/1 var(--font-mono);letter-spacing:0.12em;color:var(--warm-white);border:1px solid var(--border-on-ink);padding:8px 11px;border-radius:2px">1.74 HIGH-INDEX</span>
+            <span style="font:400 11px/1 var(--font-mono);letter-spacing:0.12em;color:var(--warm-white);border:1px solid var(--border-on-ink);padding:8px 11px;border-radius:2px">PROGRESSIVE</span>
+            <span style="font:400 11px/1 var(--font-mono);letter-spacing:0.12em;color:var(--warm-white);border:1px solid var(--border-on-ink);padding:8px 11px;border-radius:2px">RIMLESS</span>
+            <span style="font:400 11px/1 var(--font-mono);letter-spacing:0.12em;color:var(--warm-white);border:1px solid var(--border-on-ink);padding:8px 11px;border-radius:2px">SAME DAY</span>
+          </div>
+          <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Button" on-click="{{ goVisit }}" hint-size="auto,48px">Book an appointment</x-import>
+        </div>
+        <div style="flex:1 1 340px;min-width:0;display:flex;border-left:1px solid var(--border-on-ink)">
+          <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="LENSES — EDGING A LENS AT THE BENCH, 4:5" ratio="4/5" style="{{ wideImgStyle }}" hint-size="100%,440px"></x-import>
+        </div>
+      </div>
+
+      <!-- LEDGER: the rest of the craft -->
+      <div style="border-top:1px solid var(--ink);margin-top:56px">
+        <sc-for list="{{ services }}" as="svc" hint-placeholder-count="5">
+          <div data-reveal="{{ $index }}" style="display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line)">
+            <span style="font:400 46px/1 var(--font-display);color:var(--amber-text);flex:0 0 auto;min-width:64px">{{ svc.no }}</span>
+            <div style="flex:1 1 240px;min-width:0">
+              <h3 style="font:400 27px/1.15 var(--font-display);color:var(--ink);margin:0">{{ svc.name }}</h3>
+              <p style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);margin:12px 0 0">{{ svc.tag }}</p>
+            </div>
+            <p style="font:400 16px/1.65 var(--font-ui);color:var(--slate);margin:0;flex:1.4 1 320px;min-width:0;max-width:480px">{{ svc.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- CUSTOM DESIGN PROCESS -->
+  <sc-if value="{{ showProcess }}" hint-placeholder-val="{{ true }}">
+  <section id="process" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:104px 0">
+    <div style="max-width:1140px;margin:0 auto;padding:0 32px">
+      <div style="max-width:660px;margin:0 0 48px">
+        <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Eyebrow" hint-size="auto,16px">The custom process</x-import>
+        <h2 style="font:400 clamp(30px,5vw,44px)/1.09 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:12px 0 0">How a custom pair is made.</h2>
+        <p style="font:400 17px/1.7 var(--font-ui);color:var(--slate);margin:18px 0 0">Custom-crafted lenses and frames are built to your prescription, your face and your idea of the pair. Scroll through — the image follows each step at the bench.</p>
+      </div>
+      <div data-proc-pin="" style="position:relative;height:280vh">
+        <div class="ie-ps" style="position:sticky;top:96px;height:calc(100svh - 128px);max-height:620px;min-height:min(480px, calc(100svh - 112px));display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid var(--line);background:var(--paper);overflow:hidden">
+          <div style="position:relative;background:var(--sand);overflow:hidden;min-height:0">
+            <sc-for list="{{ stepViews }}" as="st" hint-placeholder-count="4">
+              <div style="position:absolute;inset:0;display:flex;opacity:{{ st.imgOp }};transition:opacity .6s ease">
+                <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="{{ st.img }}" ratio="auto" dc-props="{{ pinPhProps }}" style="{{ pinImgStyle }}" hint-size="100%,100%"></x-import>
+              </div>
+            </sc-for>
+          </div>
+          <div class="ie-ps-text" style="display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:44px 48px;border-left:1px solid var(--line);min-height:0">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+              <span style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--mute)">Step {{ procCounter }}</span>
+              <div style="display:flex;gap:6px">
+                <sc-for list="{{ stepViews }}" as="st" hint-placeholder-count="4">
+                  <span style="display:block;width:28px;height:2px;background:{{ st.seg }};transition:background .3s ease"></span>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display:grid">
+              <sc-for list="{{ stepViews }}" as="st" hint-placeholder-count="4">
+                <div style="grid-area:1/1;align-self:end;opacity:{{ st.txtOp }};transform:{{ st.txtShift }};transition:opacity .45s ease,transform .55s cubic-bezier(.22,.61,.36,1);pointer-events:{{ st.pe }}">
+                  <span class="ie-ps-no" style="display:block;font:400 72px/1 var(--font-display);color:var(--amber-text)">{{ st.no }}</span>
+                  <h3 class="ie-ps-name" style="font:400 34px/1.1 var(--font-display);letter-spacing:-0.01em;color:var(--ink);margin:18px 0 0">{{ st.name }}</h3>
+                  <p style="font:400 16px/1.7 var(--font-ui);color:var(--slate);margin:14px 0 0;max-width:420px">{{ st.desc }}</p>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- THE SHOP / GALLERY -->
+  <sc-if value="{{ showShop }}" hint-placeholder-val="{{ true }}">
+  <section id="shop" style="background:var(--warm-white);padding:100px 0">
+    <div style="max-width:1140px;margin:0 auto;padding:0 32px">
+      <div data-reveal="0" style="max-width:660px;margin:0 0 44px">
+        <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Eyebrow" hint-size="auto,16px">The shop</x-import>
+        <h2 style="font:400 clamp(30px,5vw,44px)/1.09 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:12px 0 0">Come see the wall in person.</h2>
+        <p style="font:400 17px/1.7 var(--font-ui);color:var(--slate);margin:18px 0 0">A room on K Street, a wall of frames, and the lab in back. Everything on the wall is here to pick up and try on — no cases to unlock, no counter between you and the frames.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:stretch">
+        <div data-reveal="0" style="flex:1.5 1 380px;min-width:0;display:flex;min-height:480px">
+          <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="STORE — THE FRAME WALL, FULL HEIGHT, 3:4" ratio="3/4" style="{{ tallImgStyle }}" hint-size="100%,480px"></x-import>
+        </div>
+        <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:24px">
+          <div data-reveal="1" style="flex:1;display:flex;min-height:228px"><x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="STORE — K STREET WINDOW &amp; SIGN, 4:3" ratio="4/3" style="{{ halfImgStyle }}" hint-size="100%,228px"></x-import></div>
+          <div data-reveal="2" style="flex:1;display:flex;min-height:228px"><x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="STORE — LENS DISPLAY &amp; FITTING COUNTER, 4:3" ratio="4/3" style="{{ halfImgStyle }}" hint-size="100%,228px"></x-import></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;margin-top:32px">
+        <div data-reveal="3" style="border:1px solid var(--line);background:var(--paper);padding:34px 32px;display:flex;flex-direction:column;align-items:flex-start">
+          <p style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber-text);margin:0">Order online · fit in the shop</p>
+          <h3 style="font:400 28px/1.12 var(--font-display);letter-spacing:-0.01em;color:var(--ink);margin:16px 0 0">Bought elsewhere? We'll fit it.</h3>
+          <p style="font:400 16px/1.7 var(--font-ui);color:var(--slate);margin:14px 0 22px">Order frames or lenses online and bring them to us. We cut, edge and mount the lenses right here — to your prescription, and adjusted by hand to your face.</p>
+          <a href="#visit" style="font:400 14px/1.4 var(--font-ui);color:var(--amber-text);margin-top:auto">Book an appointment →</a>
+        </div>
+        <div data-reveal="4" style="border:1px solid var(--line);background:var(--paper);padding:34px 32px;display:flex;flex-direction:column;align-items:flex-start">
+          <p style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber-text);margin:0">Restore &amp; relens</p>
+          <h3 style="font:400 28px/1.12 var(--font-display);letter-spacing:-0.01em;color:var(--ink);margin:16px 0 0">Old frames, new eyes.</h3>
+          <p style="font:400 16px/1.7 var(--font-ui);color:var(--slate);margin:14px 0 22px">Bring in a pair you already love — even a vintage cat-eye from your grandmother — and we'll relens them to a modern prescription and standard. The frame stays; the eyes get an upgrade.</p>
+          <a href="#visit" style="font:400 14px/1.4 var(--font-ui);color:var(--amber-text);margin-top:auto">Ask about a restore →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- TEAM -->
+  <sc-if value="{{ showTeam }}" hint-placeholder-val="{{ true }}">
+  <section id="team" style="background:var(--warm-white);padding:100px 0">
+    <div style="max-width:1140px;margin:0 auto;padding:0 32px">
+      <div data-reveal="0" style="max-width:660px;margin:0 0 48px">
+        <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Eyebrow" hint-size="auto,16px">The people · behind the bench</x-import>
+        <h2 style="font:400 clamp(30px,5.2vw,46px)/1.07 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:12px 0 0">The people you'll see on K Street.</h2>
+        <p style="font:400 17px/1.7 var(--font-ui);color:var(--slate);margin:18px 0 0">A small shop, run by the people who fit your frames and cut your lenses. When you come in, these are the faces at the wall and the bench.</p>
+      </div>
+
+      <!-- FEATURED: OWNER -->
+      <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:48px;align-items:stretch;border-top:1px solid var(--ink);padding-top:48px">
+        <div style="flex:1 1 320px;min-width:0;display:flex;min-height:460px">
+          <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="PORTRAIT — CURTIS, OWNER, AT THE WALL, 3:4" ratio="3/4" style="{{ tallImgStyle }}" hint-size="100%,460px"></x-import>
+        </div>
+        <div style="flex:1.35 1 380px;min-width:0;display:flex;flex-direction:column;align-items:flex-start">
+          <p style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber-text);margin:0">Owner &amp; optician · founder</p>
+          <h3 style="font:400 clamp(28px,4.4vw,40px)/1.08 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:16px 0 0">Curtis</h3>
+          <p style="font:400 17px/1.75 var(--font-ui);color:var(--slate);margin:20px 0 0;max-width:520px">Curtis has been fitting frames on K Street for years. Most days he is the one who greets you, pulls frames off the wall, and cuts your lenses at the bench in back. He opened IndiVisual Eyes to do eyewear the way it used to be done — chosen with you, made here, and fit by hand.</p>
+          <p style="font:400 17px/1.75 var(--font-ui);color:var(--slate);margin:16px 0 0;max-width:520px">Ask him about rimless. It's the job most shops send out, and the one he'd rather do himself while you wait.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0">
+            <span style="font:400 11px/1 var(--font-mono);letter-spacing:0.12em;color:var(--slate);border:1px solid var(--line);padding:8px 11px;border-radius:2px">ON-SITE LAB</span>
+            <span style="font:400 11px/1 var(--font-mono);letter-spacing:0.12em;color:var(--slate);border:1px solid var(--line);padding:8px 11px;border-radius:2px">HAND FITTING</span>
+            <span style="font:400 11px/1 var(--font-mono);letter-spacing:0.12em;color:var(--slate);border:1px solid var(--line);padding:8px 11px;border-radius:2px">RIMLESS SPECIALIST</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAFF GRID -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px 40px;margin-top:64px;border-top:1px solid var(--line);padding-top:56px">
+        <sc-for list="{{ team }}" as="m" hint-placeholder-count="3">
+          <div data-reveal="{{ $index }}" style="display:flex;flex-direction:column;min-width:0">
+            <div style="display:flex;min-height:340px">
+              <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="{{ m.img }}" ratio="3/4" style="{{ tallImgStyle }}" hint-size="100%,340px"></x-import>
+            </div>
+            <p style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber-text);margin:22px 0 0">{{ m.role }}</p>
+            <h3 style="font:400 26px/1.15 var(--font-display);color:var(--ink);margin:12px 0 0">{{ m.name }}</h3>
+            <p style="font:400 16px/1.7 var(--font-ui);color:var(--slate);margin:14px 0 0">{{ m.bio }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- STORY -->
+  <sc-if value="{{ showStory }}" hint-placeholder-val="{{ true }}">
+  <section id="story" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:100px 0">
+    <div style="max-width:1140px;margin:0 auto;padding:0 32px">
+      <div data-reveal="0" style="display:flex;flex-wrap:wrap;gap:56px;align-items:stretch">
+        <div style="flex:1 1 300px;min-width:0;display:flex;min-height:480px">
+          <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.ImagePlaceholder" label="THE LENS BENCH — WORK IN PROGRESS, 3:4" ratio="3/4" style="{{ tallImgStyle }}" hint-size="100%,480px"></x-import>
+        </div>
+        <div style="flex:1.4 1 420px;min-width:0;align-self:center">
+          <span style="display:inline-block;background:var(--sand);border:1px solid var(--line);color:var(--mute);font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;padding:9px 13px;border-radius:2px">Our story</span>
+          <h2 style="font:400 clamp(30px,5vw,44px)/1.09 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:20px 0 28px">Why we opened IndiVisual Eyes</h2>
+          <p style="font:400 17px/1.75 var(--font-ui);color:var(--slate);margin:0 0 18px;max-width:560px">IndiVisual Eyes is a small optical shop on K Street in downtown Sacramento. Most days the owner is the one who greets you, pulls frames off the wall, and cuts your lenses at the bench in back.</p>
+          <p style="font:400 17px/1.75 var(--font-ui);color:var(--slate);margin:0 0 18px;max-width:560px">We started the shop because the choice in eyewear had narrowed. The big chains carry the same dozen frames, cut lenses off site, and move you through in twenty minutes. Frames are the thing people notice first about your face, and they deserve more attention than that.</p>
+          <p style="font:400 17px/1.75 var(--font-ui);color:var(--slate);margin:0 0 18px;max-width:560px">So we built the opposite. A short, considered wall — Lindberg, Silhouette, Prada, Gucci, Persol — chosen because they are made well and wear well, not because a distributor pushed them. An on-site lab, so lenses are cut, edged and mounted here, often the same day, including rimless while you wait.</p>
+          <p style="font:400 17px/1.75 var(--font-ui);color:var(--slate);margin:0;max-width:560px">We take the time to get it right. You put a frame on, we mark exactly where your eyes sit, and we fit it by hand before you leave. If something bends or loosens later, you bring it back and we fix it. That is the whole idea: frames as wardrobe, fitted by someone who will still be here next year.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- REVIEWS LIST -->
+  <sc-if value="{{ showReviews }}" hint-placeholder-val="{{ true }}">
+  <section id="reviews" style="background:var(--warm-white);padding:24px 0 104px">
+    <div style="max-width:1140px;margin:0 auto;padding:0 32px">
+      <div data-reveal="0" style="max-width:640px;margin:0 0 40px">
+        <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Eyebrow" hint-size="auto,16px">What Sacramento says</x-import>
+        <h2 style="font:400 clamp(28px,4.6vw,42px)/1.12 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:12px 0 0">Reviews from the neighborhood.</h2>
+      </div>
+      <div data-reveal="1" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px 36px;padding-bottom:36px;margin-bottom:8px;border-bottom:1px solid var(--line)">
+        <div style="display:flex;align-items:baseline;gap:8px">
+          <span style="font:400 60px/1 var(--font-display);color:var(--ink)">4.9</span>
+          <span style="font:400 22px/1 var(--font-display);color:var(--mute)">/ 5</span>
+        </div>
+        <div style="flex:1 1 240px;min-width:0">
+          <p style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber-text);margin:0 0 8px">Google reviews</p>
+          <p style="font:400 15px/1.55 var(--font-ui);color:var(--slate);margin:0">Averaged across {{ reviewCount }} verified reviews on Google.</p>
+        </div>
+        <a href="{{ reviewsUrl }}" target="_blank" rel="noopener" style="font:400 14px/1.4 var(--font-ui);color:var(--amber-text)">Read them all on Google →</a>
+      </div>
+      <div>
+        <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+          <div style="display:flex;flex-wrap:wrap;gap:20px 48px;align-items:flex-start;justify-content:space-between;padding:32px 0;border-bottom:1px solid var(--line)">
+            <p style="font:400 20px/1.55 var(--font-display);color:var(--ink);margin:0;flex:1 1 460px;min-width:0;max-width:760px">{{ r.quote }}</p>
+            <p style="font:400 11px/1.5 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);margin:6px 0 0;flex:0 0 auto;text-align:right">{{ r.name }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- FAQ -->
+  <sc-if value="{{ showFaq }}" hint-placeholder-val="{{ true }}">
+  <section id="faq" style="background:var(--paper);border-top:1px solid var(--line);padding:100px 0">
+    <div style="max-width:880px;margin:0 auto;padding:0 32px">
+      <div style="max-width:640px;margin:0 0 40px">
+        <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Eyebrow" hint-size="auto,16px">Good to know</x-import>
+        <h2 style="font:400 clamp(28px,4.6vw,42px)/1.12 var(--font-display);letter-spacing:-0.02em;color:var(--ink);margin:12px 0 0">Questions, answered.</h2>
+      </div>
+      <div style="border-top:1px solid var(--line)">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div style="border-bottom:1px solid var(--line)">
+            <button type="button" onClick="{{ f.toggle }}" aria-expanded="{{ f.open }}" style="all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0">
+              <span style="font:400 24px/1.3 var(--font-display);color:var(--ink)">{{ f.q }}</span>
+              <span style="font:400 28px/1 var(--font-ui);color:var(--amber-text);transition:transform .45s cubic-bezier(.22,.61,.36,1);flex:0 0 auto;transform:{{ f.signRot }}">+</span>
+            </button>
+            <div style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .5s cubic-bezier(.22,.61,.36,1)">
+              <div style="overflow:hidden;min-height:0">
+                <p style="font:400 16px/1.7 var(--font-ui);color:var(--slate);margin:0 0 28px;max-width:660px;opacity:{{ f.opacity }};transform:{{ f.shift }};transition:opacity .4s ease,transform .5s cubic-bezier(.22,.61,.36,1)">{{ f.a }}</p>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- CTA BAND -->
+  <section id="visit" style="background:var(--ink);padding:104px 0">
+    <div style="max-width:1140px;margin:0 auto;padding:0 32px">
+      <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-end;justify-content:space-between">
+        <div style="flex:1 1 460px;min-width:0">
+          <x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Eyebrow" tone="amber" hint-size="auto,16px">Welcoming new patients</x-import>
+          <h2 style="font:400 clamp(34px,7vw,58px)/1.04 var(--font-display);letter-spacing:-0.02em;color:var(--warm-white);margin:16px 0 0;max-width:12ch">Come in and try them on.</h2>
+          <p style="font:400 18px/1.7 var(--font-ui);color:var(--line);margin:22px 0 0;max-width:480px">Exams, fittings and repairs all start with a visit. Mon–Fri, 10:00 a.m.–6:00 p.m. Walk-ins welcome.</p>
+        </div>
+        <div style="flex:0 1 320px;min-width:0">
+          <div style="border-top:1px solid var(--border-on-ink);padding-top:20px">
+            <p style="font:400 11px/1.4 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);margin:0">Visit</p>
+            <p style="font:400 16px/1.65 var(--font-ui);color:var(--warm-white);margin:8px 0 0">1200 K Street, Suite 5<br>Sacramento, CA 95814</p>
+          </div>
+          <div style="border-top:1px solid var(--border-on-ink);padding-top:20px;margin-top:20px">
+            <p style="font:400 11px/1.4 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);margin:0">Call</p>
+            <p style="font:400 16px/1.65 var(--font-ui);color:var(--warm-white);margin:8px 0 0">(916) 444-3012</p>
+          </div>
+        </div>
+      </div>
+      <a href="tel:9164443012" style="display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:48px;padding:28px 32px;background:var(--amber);color:var(--ink);border-radius:2px">
+        <span style="font:400 30px/1.05 var(--font-display);letter-spacing:-0.01em">Book an appointment</span>
+        <span style="font:400 34px/1 var(--font-ui)" aria-hidden="true">→</span>
+      </a>
+      <div style="margin-top:48px">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:16px">
+          <p style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin:0">Find us · 1200 K Street, downtown Sacramento</p>
+          <a href="https://goo.gl/maps/JNo7MWqd8jH1iRxU9" target="_blank" rel="noopener" style="font:400 11px/1 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber)">Get directions →</a>
+        </div>
+        <iframe src="map.html" title="Map to IndiVisual Eyes, 1200 K Street, Sacramento" loading="lazy" style="width:100%;height:440px;border:1px solid var(--border-on-ink);display:block"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer style="background:var(--ink);color:var(--warm-white);padding:72px 32px 32px">
+  <div style="max-width:1140px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px 48px">
+      <div>
+        <p style="font:400 11px/1.4 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin:0 0 14px">Visit</p>
+        <p style="font:400 16px/1.9 var(--font-ui);color:var(--warm-white);margin:0">1200 K Street, Suite 5</p>
+        <p style="font:400 16px/1.9 var(--font-ui);color:var(--warm-white);margin:0">Sacramento, CA 95814</p>
+      </div>
+      <div style="text-align:right">
+        <p style="font:400 11px/1.4 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin:0 0 14px">Call</p>
+        <p style="font:400 16px/1.9 var(--font-ui);color:var(--warm-white);margin:0"><a href="tel:9164443012" style="color:var(--warm-white);text-decoration:none">(916) 444-3012</a></p>
+      </div>
+      <div>
+        <p style="font:400 11px/1.4 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin:0 0 14px">Hours</p>
+        <p style="font:400 16px/1.9 var(--font-ui);color:var(--warm-white);margin:0">Mon–Fri</p>
+        <p style="font:400 16px/1.9 var(--font-ui);color:var(--warm-white);margin:0">10:00 a.m.–6:00 p.m.</p>
+        <p style="font:400 16px/1.9 var(--font-ui);color:var(--warm-white);margin:0">Walk-ins welcome</p>
+      </div>
+      <div style="text-align:right">
+        <p style="font:400 11px/1.4 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin:0 0 14px">Site</p>
+        <sc-for list="{{ footerLinks }}" as="l" hint-placeholder-count="5">
+          <a href="#" data-to="{{ l.to }}" onClick="{{ onFootNav }}" style="display:block;font:400 16px/1.9 var(--font-ui);color:var(--warm-white);text-decoration:none" style-hover="color:var(--amber)">{{ l.label }}</a>
+        </sc-for>
+      </div>
+    </div>
+    <div style="margin-top:56px">
+      <a href="#" onClick="{{ goTop }}" aria-label="IndiVisual Eyes — home" style="display:inline-flex;line-height:0"><x-import component-from-global-scope="IndiVisualEyesDesignSystem_896a08.Logo" src="{{ logoReverse }}" width="{{ footerLogoWidth }}" hint-size="200px,48px"></x-import></a>
+      <p style="font:italic 400 24px/1.3 var(--font-display);color:var(--warm-white);margin:22px 0 0">To See and Be Seen.</p>
+    </div>
+    <div style="border-top:1px solid var(--border-on-ink);margin-top:36px;padding-top:24px">
+      <p style="font:400 11px/1.4 var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);margin:0">© 2026 IndiVisual Eyes</p>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;showStory&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Homepage sections&quot;},&quot;showTeam&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Homepage sections&quot;},&quot;showServices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Homepage sections&quot;},&quot;showProcess&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Homepage sections&quot;},&quot;showShop&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Homepage sections&quot;},&quot;showBrands&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Homepage sections&quot;},&quot;showReviews&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Homepage sections&quot;},&quot;showFaq&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Homepage sections&quot;}}">
+class Component extends DCLogic {
+  state = { active: 0, menuOpen: false, procActive: 0, faqOpen: {} };
+  componentDidMount(){
+    if (typeof window==='undefined') return;
+    this._io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{ if(e.isIntersecting){ const i=Number(e.target.getAttribute('data-process-step')); if(!Number.isNaN(i)) this.setState({active:i}); } });
+    }, { rootMargin:'-45% 0px -45% 0px', threshold:0 });
+    this._observe();
+    this._setupMotion();
+    this._hdr = ()=>{ const m=document.querySelector('.ie-nav-mobile'); const hd=m&&m.previousElementSibling; if(hd) document.documentElement.style.setProperty('--ie-hdr-h', Math.round(hd.getBoundingClientRect().bottom)+'px'); };
+    window.addEventListener('resize', this._hdr); this._hdr();
+    ['prada','oakley','ray-ban','gucci','coach','giorgio-armani','silhouette','ovvo-optics','lindberg'].forEach(slug=>{ const im=new Image(); im.onload=()=>this.setState(s=>({logoOk:{...(s.logoOk||{}),[slug]:true}})); im.src='assets/brands/'+slug+'.png'; });
+    this._onPin = ()=>{ const el=document.querySelector('[data-proc-pin]'); if(!el) return; const r=el.getBoundingClientRect(); const span=r.height-window.innerHeight; const p=span>0?Math.min(0.999,Math.max(0,-r.top/span)):0; const i=Math.floor(p*4); if(i!==this.state.procActive) this.setState({procActive:i}); };
+    window.addEventListener('scroll', this._onPin, {passive:true}); window.addEventListener('resize', this._onPin); this._onPin();
+    this._pinIo = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{ if(e.isIntersecting){ const i=Number(e.target.getAttribute('data-seg')); if(!Number.isNaN(i) && i!==this.state.procActive) this.setState({procActive:i}); } });
+    }, { rootMargin:'-50% 0px -50% 0px', threshold:0 });
+  }
+  _setupMotion(){
+    if(typeof document==='undefined') return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const draws = Array.from(document.querySelectorAll('[data-draw]'));
+    draws.forEach((el)=>{ try{ const len=el.getTotalLength(); el.style.strokeDasharray=len; el.style.strokeDashoffset=reduce?0:len; el.style.transition='stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1)'; el.style.transitionDelay=(Number(el.getAttribute('data-draw'))*120)+'ms'; }catch(e){} });
+    const reveals = Array.from(document.querySelectorAll('[data-reveal]'));
+    reveals.forEach((el)=>{ if(reduce) return; el.style.opacity='0'; el.style.transform='translateY(18px)'; el.style.transition='opacity .6s ease, transform .6s ease'; });
+    if(reduce) return;
+    this._motionIo = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{ if(!e.isIntersecting) return; const t=e.target;
+        if(t.hasAttribute('data-draw')){ t.style.strokeDashoffset='0'; }
+        if(t.hasAttribute('data-reveal')){ t.style.transitionDelay=(Number(t.getAttribute('data-reveal'))*70)+'ms'; t.style.opacity='1'; t.style.transform='none'; }
+        this._motionIo.unobserve(t);
+      });
+    }, { rootMargin:'0px 0px -10% 0px', threshold:0.15 });
+    draws.forEach((el)=> this._motionIo.observe(el));
+    reveals.forEach((el)=> this._motionIo.observe(el));
+  }
+  componentDidUpdate(){ this._observe(); }
+  _observe(){
+    if(typeof document==='undefined') return;
+    if(this._io) document.querySelectorAll('[data-process-step]').forEach((el)=>{ if(!el.__obs){ el.__obs=true; this._io.observe(el); } });
+    if(this._pinIo) document.querySelectorAll('.ie-pin-seg').forEach((el)=>{ if(!el.__pobs){ el.__pobs=true; this._pinIo.observe(el); } });
+  }
+  componentWillUnmount(){ if(this._io) this._io.disconnect(); if(this._motionIo) this._motionIo.disconnect(); if(this._pinIo) this._pinIo.disconnect(); }
+  scrollTo(id){
+    if (typeof document==='undefined') return;
+    const el = document.getElementById(id);
+    const header = document.querySelector('header');
+    const off = (header ? header.offsetHeight : 0) + 12;
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - off, behavior:'smooth' });
+  }
+  renderVals(){
+    const navMap = { 'Story':'story', 'Team':'team', 'Services':'services', 'Brands':'brands', 'Reviews':'reviews', 'Visit':'visit', 'Appointments':'visit' };
+    const active = this.state.active ?? 0;
+    const pa = this.state.procActive ?? 0;
+    const ok = this.state.logoOk || {};
+    const brandList = [['Prada','prada'],['Oakley','oakley'],['Ray-Ban','ray-ban'],['Gucci','gucci'],['Coach','coach'],['Giorgio Armani','giorgio-armani'],['Silhouette','silhouette'],['OVVO Optics','ovvo-optics'],['Lindberg','lindberg']].map(([name,slug])=>({ name, src:'assets/brands/'+slug+'.png', label:name+' — LOGO', bg: ok[slug] ? "url('assets/brands/"+slug+".png')" : 'none', hasLogo:!!ok[slug], noLogo:!ok[slug] }));
+    const stepsBase = [
+      { no:'01', name:'Prescription & fit', desc:'Start with an up-to-date prescription, then talk through how you use your eyes day to day.', img:'PROCESS 01 — READING THE PRESCRIPTION, 4:5' },
+      { no:'02', name:'Choose or build the frame', desc:'Pick from the wall, or we build to your measurements and the shape of your face.', img:'PROCESS 02 — CHOOSING FRAMES AT THE WALL, 4:5' },
+      { no:'03', name:'Dot & measure', desc:'You put the frame on and we mark exactly where your eyes sit in it.', img:'PROCESS 03 — DOTTING THE LENS ON THE FACE, 4:5' },
+      { no:'04', name:'Cut, mount & fit', desc:'Lenses edged and mounted at the bench, then fit by hand before you leave.', img:'PROCESS 04 — EDGING & MOUNTING AT THE BENCH, 4:5' }
+    ];
+    const stepViews = stepsBase.map((s,i)=>({ ...s, idx:i, imgOp: i===pa?1:0, txtOp: i===pa?1:0, txtShift: i===pa?'translateY(0)':(i<pa?'translateY(-14px)':'translateY(14px)'), pe: i===pa?'auto':'none', seg: i<=pa?'var(--amber)':'var(--line)', op: i===active?1:0.4, edge: i===active?'var(--ink)':'var(--line)', numc: i===active?'var(--amber-text)':'var(--mute)', namec: i===active?'var(--ink)':'var(--slate)', pinOp: i===pa?1:0, pinShift: i===pa?'translateY(0)':(i<pa?'translateY(-26px)':'translateY(26px)'), counter: ('0'+(i+1)).slice(-2)+' / '+('0'+stepsBase.length).slice(-2) }));
+    const cur = stepsBase[active] || stepsBase[0];
+    const pad = (n)=> ('0'+n).slice(-2);
+    const procDots = stepsBase.map((s,i)=>({ w: i===pa?'22px':'6px', c: i===pa?'var(--amber)':'var(--line)' }));
+    return {
+      logo: 'assets/logo-indivisual-eyes.png',
+      procCounter: pad(pa+1) + ' / ' + pad(stepsBase.length),
+      procDots,
+      onProcScroll: (e) => { const t = e.currentTarget; const card = t.firstElementChild; if(!card) return; const step = card.offsetWidth + 16; const i = Math.round(t.scrollLeft / step); if(i !== this.state.procActive) this.setState({ procActive: Math.max(0, Math.min(stepsBase.length-1, i)) }); },
+      logoReverse: 'assets/logo-indivisual-eyes.png',
+      logoWidth: 150,
+      footerLogoWidth: 200,
+      navItems: ['Brands','Services','Team','Story','Reviews','Visit'],
+      footerLinks: [{label:'Our story',to:'story'},{label:'Meet the team',to:'team'},{label:'Brands we carry',to:'brands'},{label:'Reviews',to:'reviews'},{label:'Visit us',to:'visit'}],
+      onFootNav: (e) => { if(e&&e.preventDefault) e.preventDefault(); const t = e.currentTarget.getAttribute('data-to'); this.scrollTo(t || 'visit'); },
+      footerHours: ['Mon–Fri 10:00 a.m.–6:00 p.m.','Walk-ins welcome'],
+      onNav: (item) => this.scrollTo(navMap[item] || 'visit'),
+      onNavClick: (e) => { if(e&&e.preventDefault) e.preventDefault(); const t = e.currentTarget.getAttribute('data-nav'); this.setState({ menuOpen:false }); this.scrollTo(navMap[t] || 'visit'); },
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      goTop: (e) => { if(e&&e.preventDefault) e.preventDefault(); this.setState({ menuOpen:false }); if(typeof window!=='undefined') window.scrollTo({ top:0, behavior:'smooth' }); },
+      menuDisplay: (this.state.menuOpen ? 'flex' : 'none'),
+      menuStyle: { display:'flex', flexDirection:'column', background:'var(--warm-white)', borderBottom:(this.state.menuOpen?'1px solid var(--line)':'1px solid transparent'), overflowX:'hidden', overflowY:(this.state.menuOpen?'auto':'hidden'), overscrollBehavior:'contain', WebkitOverflowScrolling:'touch', transition:'max-height .34s ease, opacity .24s ease', maxHeight:(this.state.menuOpen?'calc(100dvh - var(--ie-hdr-h, 72px))':'0px'), opacity:(this.state.menuOpen?1:0) },
+      goVisit: () => this.scrollTo('visit'),
+      goVisitMobile: () => { this.setState({ menuOpen:false }); this.scrollTo('visit'); },
+      goStory: () => this.scrollTo('story'),
+      wideImgStyle: { width:'100%', height:'100%', minHeight:'340px' },
+      procImgStyle: { width:'100%', height:'auto', minHeight:'0' },
+      logoImgStyle: { width:'100%', height:'100%', minHeight:'72px' },
+      pinImgStyle: { width:'100%', height:'100%', minHeight:0, display:'flex' },
+      pinPhProps: { style: { width:'100%', height:'100%', flex:'1 1 auto', aspectRatio:'auto', boxSizing:'border-box' } },
+      showStory: this.props.showStory ?? true,
+      showTeam: this.props.showTeam ?? true,
+      team: [
+        { name:'Staff #1', role:'Designated Role', img:'PORTRAIT — MARISOL AT THE FITTING COUNTER, 3:4', bio:'Staff #1 handles frame styling and fittings up front. She has a good eye for the frame you didn’t know you were looking for, and the patience to let you try the whole wall.' },
+        { name:'Staff #2', role:'Designated role', img:'PORTRAIT — DEV AT THE LENS BENCH, 3:4', bio:'Staff #2 runs the lens bench — edging, mounting and tinting. If your lenses are finished the same day, it’s usually because Dev is back there making it happen.' },
+        { name:'Staff #3', role:'designated role', img:'PORTRAIT — PRIYA AT THE K STREET WINDOW, 3:4', bio:'Staff #3 Books your appointment, answers the phone, and knows where every repair is in the shop. She’s the first person you’ll talk to and the one who’ll call when your glasses are ready.' }
+      ],
+      showServices: this.props.showServices ?? true,
+      showProcess: this.props.showProcess ?? true,
+      showShop: this.props.showShop ?? true,
+      tallImgStyle: { width:'100%', height:'100%', minHeight:'480px' },
+      halfImgStyle: { width:'100%', height:'100%', minHeight:'228px' },
+      showBrands: this.props.showBrands ?? true,
+      showReviews: this.props.showReviews ?? true,
+      showFaq: this.props.showFaq ?? true,
+      reviewCount: '120+',
+      reviewsUrl: 'https://www.google.com/maps/search/IndiVisual+Eyes+1200+K+Street+Sacramento',
+      faqs: [
+        { q:'Do I need an appointment?', a:'Walk-ins are welcome, but an appointment means we can give you our full attention. Call (916) 444-3012 or request one online.' },
+        { q:'Can you use my current prescription?', a:'Yes. Bring an up-to-date prescription from any optometrist and we\u2019ll cut and fit lenses to it.' },
+        { q:'How long do custom lenses take?', a:'Many jobs are finished the same day at our on-site lab, including rimless. More involved lenses take a little longer, and we\u2019ll tell you up front.' },
+        { q:'Can you put new lenses in frames I already own?', a:'Usually, yes — even vintage frames. Bring them in, we\u2019ll check they can take modern lenses, then relens them to your prescription.' },
+        { q:'Do you take my vision plan?', a:'We\u2019re an independent shop. Bring your prescription and we\u2019ll build to it; ask us about out-of-network reimbursement, which many plans offer.' },
+        { q:'Where do I park?', a:'We\u2019re at 1200 K Street in downtown Sacramento, with street and garage parking nearby. Use the map below for directions.' }
+      ].map((f, i) => { const o = !!this.state.faqOpen[i]; return { ...f, open: o, rows: o ? '1fr' : '0fr', opacity: o ? 1 : 0, shift: o ? 'translateY(0)' : 'translateY(-8px)', signRot: o ? 'rotate(45deg)' : 'rotate(0deg)', toggle: () => this.setState(s => ({ faqOpen: { ...s.faqOpen, [i]: !s.faqOpen[i] } })) }; }),
+      services: [
+        { no:'01', name:'Designer frames', tag:'Acetate · Titanium · Rimless', desc:'A curated wall — Lindberg, Silhouette, Prada, Gucci and Persol — chosen to wear well and to try on in person.' },
+        { no:'02', name:'Sunglasses', tag:'Rx · Plano · Polarized', desc:'Prescription and plano, in the brands you already know, with custom tints finished on request.' },
+        { no:'03', name:'Eyeglass fittings', tag:'Marked · Measured by hand', desc:'You put the frame on, we mark where your eyes sit, and adjust it so it rests right on your face.' },
+        { no:'04', name:'Lens tinting', tag:'Gradient · Solid · Mirror', desc:'Custom tints and gradients mixed and finished here at the bench.' },
+        { no:'05', name:'Repairs & adjustments', tag:'Solder · Hinge · Nose pad', desc:'Bent, stepped-on or loose — bring it in and we fix it, often while you wait.' }
+      ],
+      stepViews,
+      activeImg: cur.img,
+      activeName: cur.name,
+      activeCaption: 'Step ' + cur.no + ' / 0' + stepsBase.length,
+      brands: brandList.map(x=>x.name),
+      brandsLoop: [...brandList, ...brandList],
+      reviews: [
+        { quote: '"He understands that the frame is only half the story; the lenses have to live up to it. The custom lenses he helped fit elevate the frames instead of compromising them."', name: 'BBJ.916 · Google' },
+        { quote: '"They have an on-premise lab and can make and cut lenses to your specifications or design ideas. He promised and delivered within the limited time of my visit."', name: 'Cornel E. · Google' },
+        { quote: '"Only shop I know of in the Sacramento area that cuts and mounts rimless glasses on site while you wait. Reasonable prices, and it lasts."', name: 'Long-time Silhouette wearer · Google' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

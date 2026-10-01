@@ -1,0 +1,49 @@
+:root{
+/* Core */
+--amber:#FFB000;
+--ink:#17150F;
+--warm-white:#FAF8F4;
+/* Secondary */
+--signage-blue:#2E5C86;
+/* Neutrals */
+--paper:#FFFFFF;
+--sand:#F0ECE4;
+--line:#E0DBD1;
+--mute:#8A8377;
+--slate:#55504A;
+/* Amber, darkened for text on light grounds */
+--amber-text:#8A5A00;
+/* Interaction shades derived from --amber (hover = pressed-down amber from the states row) */
+--amber-hover:#E8A006;
+--amber-disabled:#E0DBD1;
+/* Error. Approximated from the style guide's error input; confirm with the source file. */
+--error:#A6271C;
+
+/* Semantic aliases */
+--bg-page:var(--warm-white);
+--bg-surface:var(--paper);
+--bg-sunken:var(--sand);
+--bg-inverse:var(--ink);
+--bg-accent:var(--amber);
+--bg-placeholder:var(--sand);
+
+--text-body:var(--ink);
+--text-heading:var(--ink);
+--text-secondary:var(--slate);
+--text-mute:var(--mute);
+--text-inverse:var(--warm-white);
+--text-link:var(--amber-text);
+--text-on-accent:var(--ink);
+--text-accent-on-ink:var(--amber);
+--text-error:var(--error);
+
+--border-hairline:var(--line);
+--border-strong:var(--ink);
+--border-focus:var(--amber);
+--border-error:var(--error);
+--border-on-ink:rgba(250,248,244,.28);
+
+/* The striped placeholder ground used wherever photography is not shot yet */
+--placeholder-stripes:repeating-linear-gradient(135deg,#F0ECE4 0 10px,#E6E0D6 10px 20px); /* @kind other */
+--placeholder-stripes-ink:repeating-linear-gradient(135deg,#17150F 0 10px,#221F17 10px 20px); /* @kind other */
+}

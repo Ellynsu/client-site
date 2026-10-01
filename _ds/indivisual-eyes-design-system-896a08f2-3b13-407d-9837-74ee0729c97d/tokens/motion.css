@@ -1,0 +1,8 @@
+/* The source style guide does not specify motion. These are conservative
+   defaults consistent with its restraint: short, linear-ish fades, no bounce. */
+:root{
+--duration-fast:120ms; /* @kind other */
+--duration-base:180ms; /* @kind other */
+--ease-standard:cubic-bezier(.2,0,.2,1); /* @kind other */
+--transition-control:background-color var(--duration-fast) var(--ease-standard),border-color var(--duration-fast) var(--ease-standard),color var(--duration-fast) var(--ease-standard);
+}

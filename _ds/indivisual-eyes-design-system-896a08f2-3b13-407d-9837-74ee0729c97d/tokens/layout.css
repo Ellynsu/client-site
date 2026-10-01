@@ -1,0 +1,18 @@
+:root{
+--container-max:1140px;
+--grid-columns:12; /* @kind other */
+--grid-gutter:32px;
+--bp-tablet:900px;         /* grid collapses to 6 columns */
+--bp-mobile:640px;         /* grid collapses to 1 column */
+
+--radius-control:2px;
+--radius-card:0;
+--radius-image:0;
+
+--border-width:1px;
+--shadow-none:none;        /* the brand uses hairline borders, never drop shadows */
+
+--control-height:48px;     /* minimum */
+--control-padding-x:24px;
+--utility-bar-height:40px;
+}
